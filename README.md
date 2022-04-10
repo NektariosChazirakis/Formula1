@@ -16,7 +16,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+I was planning to write the Unit test using jest/spectator.wal;laby, however due to a tech error, it appears that the spectator installation ws not properly done, therefore I have only kept the automated created unit tests.  
 
 ## Running end-to-end tests
 
@@ -24,4 +24,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+An initial thought was to include NgRx for state management, howeverm the idea was abadoned due to the simplicity of the project.
+
+
