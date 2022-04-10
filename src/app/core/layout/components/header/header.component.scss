@@ -1,0 +1,31 @@
+a {
+  padding: 20px;
+  text-decoration: none;
+  color: white;
+
+  &:hover {
+    padding: 20px;
+    background-color: #FF4080;
+    color: #FFFFFF;
+  }
+
+  &:active {
+    color: #FF4080;
+  }
+}
+
+.navigation-items{
+  list-style-type: none;
+  padding: 0;
+  margin-right: 0;
+}
+
+mat-toolbar{
+  border-radius: 3px;
+}
+
+@media(max-width: 959px){
+  mat-toolbar{
+    border-radius: 0px;
+  }
+}

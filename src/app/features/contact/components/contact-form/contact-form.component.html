@@ -1,0 +1,31 @@
+<section fxLayout="column" fxFlexAlign="stretch" fxLayoutGap="20px">
+  <div fxFlexAlign="center">
+    <p>Contact form</p>
+  </div>
+  <div fxFlexAlign="center">
+
+    <form class="contact" [formGroup]="contactForm" method="post" (submit)="onSubmit()">
+      <app-driver-picker [drivers]="drivers" [label]="'Driver'" formControlName="driver"></app-driver-picker>
+      <mat-error *ngIf="contactForm.get('driver')!.hasError('required')">Please select a driver</mat-error>
+      <mat-form-field>
+        <mat-label>Subject</mat-label>
+        <input matInput formControlName="subject">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Message</mat-label>
+        <textarea matInput formControlName="message" maxlength="256" placeholder="Please type your message ..." required></textarea>
+        <mat-hint align="end"> {{contactForm.get('message')!.value?.length || 0}}/256</mat-hint>
+        <mat-error *ngIf="contactForm.get('message')!.hasError('required')">Please enter a message</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent" [disabled]="!contactForm.valid" class="submit" type="submit">Submit</button>
+      <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+        <span>{{responseMessage$ | async}}</span>
+      </div>
+    </form>
+  </div>
+  <div fxFlexAlign="center">
+    <mat-divider></mat-divider>
+  </div>
+</section>
+
+

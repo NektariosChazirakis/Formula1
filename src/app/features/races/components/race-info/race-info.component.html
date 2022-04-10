@@ -1,0 +1,44 @@
+<mat-expansion-panel *ngIf="race">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      <table>
+        <tr>
+          <td>Round:</td>
+          <td><strong>{{race.round}}</strong></td>
+        </tr>
+      </table>
+    </mat-panel-title>
+    <mat-panel-description>
+      <table>
+        <tr>
+          <td class="table-field">Date:</td>
+          <td class="table-value"><strong>{{race.date}}</strong></td>
+          <td class="table-gap"></td>
+          <td class="table-field">Circuit:</td>
+          <td class="table-value"><strong>{{race.Circuit.circuitName}} - {{race.Circuit.Location.locality}}, {{race.Circuit.Location.country}}</strong></td>
+        </tr>
+      </table>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <table class="results-table">
+    <caption>Driver round results</caption>
+    <thead>
+      <tr>
+        <th scope="col">Position</th>
+        <th scope="col">Points</th>
+        <th scope="col">Driver name</th>
+        <th scope="col">Constructor name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let roundResult of race.Results">
+        <td data-label="Position">{{roundResult.position}}</td>
+        <td data-label="Points">{{roundResult.points}}</td>
+        <td data-label="Driver name">{{roundResult.Driver.givenName}} {{ roundResult.Driver.familyName }}</td>
+        <td data-label="Constructor name">{{roundResult.Constructor.name}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</mat-expansion-panel>

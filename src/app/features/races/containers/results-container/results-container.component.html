@@ -1,0 +1,8 @@
+<app-results
+  [seasons]="(seasons$ | async)!"
+  [races]="(races$| async)!"
+  [seasonSelected]="(seasonSelected$| async)!"
+  (selectedSeason)="onSelectedSeasonChange($event)">
+</app-results>
+
+

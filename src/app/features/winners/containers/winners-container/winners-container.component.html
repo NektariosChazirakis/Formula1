@@ -1,0 +1,6 @@
+<app-winners-results
+  [seasons]="(seasons$ | async)!"
+  [standingLists]="(standingLists$| async)!"
+  [seasonSelected]="(seasonSelected$| async)!"
+  (selectedSeason)="onSelectedSeasonChange($event)">
+</app-winners-results>

@@ -1,0 +1,27 @@
+<section fxLayout="column" fxFlexAlign="stretch" fxLayoutGap="20px">
+  <div fxFlexAlign="center">
+    <p>Formula 1 winners</p>
+  </div>
+  <div fxFlexAlign="center">
+    <form [formGroup]="seasonForm">
+      <app-season-picker
+        [seasons]="seasons"
+        [label]="'Season'"
+        formControlName="season"
+        (ngModelChange)="onSeasonChange($event)">
+      </app-season-picker>
+    </form>
+  </div>
+  <div fxFlexAlign="center">
+    <mat-divider></mat-divider>
+  </div>
+  <div fxFlexAlign="center" *ngIf="seasonSelected && !standingLists">
+    <app-loading></app-loading>
+  </div>
+  <div *ngIf="standingLists" fxFlexAlign="stretch">
+    <mat-accordion>
+      <app-winner-info *ngFor="let standingList of standingLists" [standingList]="standingList"></app-winner-info>
+    </mat-accordion>
+  </div>
+</section>
+

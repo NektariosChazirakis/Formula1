@@ -1,0 +1,10 @@
+<form>
+  <mat-form-field appearance="outline">
+    <mat-label>{{label}}</mat-label>
+    <mat-select name="driver" [formControl]="driverControl" (selectionChange)="optionSelected($event.value)">
+      <mat-option *ngFor="let driver of drivers" [value]="getFullName(driver)">
+        {{driver.givenName}} {{driver.familyName}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
